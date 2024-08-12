@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -7,5 +8,14 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "offers#index"
+
+  resources :offers, only: %i[index new create] do
+    resources :bookings, only: %i[new create]
+  end
+
+  resources :bookings, only: %i[update]
+
+  get "dashboards/offers", to: "dashboards#offers"
+  get "dashboards/bookings", to: "dashboards#bookings"
 end
