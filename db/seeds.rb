@@ -9,9 +9,9 @@
 #   end
 
 User.destroy_all
-puts "All Bernards were destroyed, DB is empty"
+puts "All Bernards were destroyed"
 
-attributes = [
+user_attributes = [
   { email: "bernard.tapie@coquille.com", last_name: "Tapie", password: "azerty" },
   { email: "bernard.ebianca@disney.com", last_name: "Ebianca", password: "azerty" },
   { email: "bernard.outo@konoha.com", last_name: "Outo", password: "azerty" },
@@ -19,7 +19,28 @@ attributes = [
   { email: "nanar.l'hermite@coquille.com", last_name: "l'hermite", password: "azerty" },
   { email: "bernard.arnault@lvmh.com", last_name: "Arnault", password: "azerty" }
 ]
-attributes.each do |attribute|
-  User.create(attribute)
+
+user_attributes.each do |user_attribute|
+  User.create(user_attribute)
 end
 puts "#{User.count} users created"
+
+#-----------------------------------------------
+
+Offer.destroy_all
+puts "All offers were destroyed"
+
+offer_attributes = [
+  { title: "Huge shell to rent", location: "Rio beach", price: 200, user: User.last },
+  { title: "Crabs love it", location: "Near to the docks", price: 120, user: User.first },
+  { title: "Comfy shell", location: "In an airplane, behind seat A21", price: 130, user: User.last },
+  { title: "Cheap shell for students", location: "Second rock after the coral forest", price: 45, user: User.second },
+  { title: "Luxury shell", location: "In the beautiful seaweed fields", price: 500, user: User.second },
+  { title: "Double bedroom shell, ideal for couples", location: "Pyla Dune", price: 150, user: User.last },
+  { title: "Dowtown shell", location: "Arcachon", price: 115, user: User.first }
+]
+
+offer_attributes.each do |offer_attribute|
+  Offer.create(offer_attribute)
+end
+puts "#{Offer.count} offers created"
