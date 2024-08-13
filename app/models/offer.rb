@@ -1,7 +1,7 @@
 class Offer < ApplicationRecord
   belongs_to :user
 
-  def show
-    @offer = Offer.find(params[:id])
-  end
+  validates :title, presence: true
+  validates :location, presence: true
+  validates :price, presence: true
 end
