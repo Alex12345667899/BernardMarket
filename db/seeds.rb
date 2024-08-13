@@ -8,17 +8,18 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-
+User.destroy_all
+puts "All Bernards were destroyed, DB is empty"
 
 attributes = [
-  { email: "bernard.tapie@coquille.com", last_name: "Tapie" },
-  { email: "bernard.ebianca@disney.com", last_name: "Ebianca" },
-  { email: "bernard.outo@konoha.com", last_name: "Outo" },
-  { email: "bernard.cotrafiquant@medellin.com", last_name: "Cotrafiquant" },
-  { email: "nanar.l'hermite@coquille.com", last_name: "l'hermite" },
-  { email: "bernard.arnault@lvmh.com", last_name: "Arnault" }
+  { email: "bernard.tapie@coquille.com", last_name: "Tapie", password: "azerty" },
+  { email: "bernard.ebianca@disney.com", last_name: "Ebianca", password: "azerty" },
+  { email: "bernard.outo@konoha.com", last_name: "Outo", password: "azerty" },
+  { email: "bernard.cotrafiquant@medellin.com", last_name: "Cotrafiquant", password: "azerty" },
+  { email: "nanar.l'hermite@coquille.com", last_name: "l'hermite", password: "azerty" },
+  { email: "bernard.arnault@lvmh.com", last_name: "Arnault", password: "azerty" }
 ]
 attributes.each do |attribute|
-  user = User.create(attribute)
+  User.create(attribute)
 end
 puts "#{User.count} users created"
