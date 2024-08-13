@@ -44,3 +44,28 @@ offer_attributes.each do |offer_attribute|
   Offer.create(offer_attribute)
 end
 puts "#{Offer.count} offers created"
+
+#-----------------------------------------------
+
+Booking.destroy_all
+puts "All bookings were destroyed"
+
+booking_attributes = [
+  { start_date: "10/03/2024", end_date: "14/03/2024", accepted: true, offer: Offer.last, user: User.first }
+]
+
+booking_attributes.each do |booking_attribute|
+  Booking.create(booking_attribute)
+end
+puts "#{Booking.count} bookings created"
+
+# t.date "start_date"
+# t.date "end_date"
+# t.integer "total_price"
+# t.boolean "accepted"
+# t.bigint "user_id", null: false
+# t.bigint "offer_id", null: false
+# t.datetime "created_at", null: false
+# t.datetime "updated_at", null: false
+# t.index ["offer_id"], name: "index_bookings_on_offer_id"
+# t.index ["user_id"], name: "index_bookings_on_user_id"
