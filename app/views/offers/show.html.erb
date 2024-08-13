@@ -1,9 +1,17 @@
-<h1>Show offer</h1>
+<h1 class="justify-content-center mt-5 mb-5">Show offer</h1>
+  <div class="d-flex justify-content-end">
+    <div id="p-2 col-3">
+      <%= image_tag "bernard.png", class: "w-50 rounded"%>
+    </div>
 
-<p>
-The shell: <%= @offer.title %> 🐚<br>
-Address:<%= @offer.location %> 🏝️ <br>
-Price: <%= @offer.price %> 🌿
-</p>
-
-<%= link_to "Back home", offers_path(@offer)%>
+    <div class="p-2 container mt-3 col-3 bg-light border">
+        <p> <b> <%= @offer.title %> 🐚</b><br> </p>
+        <p> Address: <%= @offer.location %> 🏝️<br> </p>
+        <p> Price: <%= @offer.price %> 🌿 night </p>
+    </div>
+  </div>
+  <div class="btn btn-primary"><%= link_to "Back home", offers_path(@offer)%>
+  </div>
+  <div class="mt-5 mb-5">
+  <h2>Latest reviews</h2>
+  </div>

@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "offers#index"
 
+<<<<<<< HEAD
   resources :offers, only: %i[index show new create] do
+=======
+  resources :offers, only: %i[index new create show] do
+>>>>>>> master
     resources :bookings, only: %i[new create]
   end
 
