@@ -1,5 +1,16 @@
-<ul>
+<div class="d-flex align-items-center flex-column">
   <% @offers.each do |offer| %>
-    <li><%= link_to offer.title, offer_path(offer) %></li>
+    <%= link_to offer, class:'col-6 card-body text-decoration-none' do %>
+      <div class="card-index">
+        <div class="index-img">
+          <%= image_tag "bernard.png" %>
+        </div>
+        <div class="card-index-infos">
+          <h2><%= offer.title %></h2>
+          <p class="text"><%= offer.location %></p>
+          <p class="text"><%= offer.price  %> 🌿</p>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-</ul>
+</div>
