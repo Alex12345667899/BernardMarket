@@ -1,4 +1,4 @@
-<div class="d-flex flex-row card mt-4 bg-light" style="width: 80rem;">
+<div class="d-flex flex-row card mt-4 bg-light";>
 
   <div class="col-4">
     <%= image_tag "bernard.png", class: "w-100 rounded" %>
@@ -12,13 +12,10 @@
     </ul>
     <p> Please note that by booking this shell, you acknowledge that it may not be perfectly clean and that some sand may remain in the bed. <p>
 
-    <div>
-    <div class="btn bg-sand px-20 w-30 mt-3 rounded">
-      <%= link_to "Book", dashboards_bookings_path(@booking) %>
-    </div>
+    <div class="bg-sand px-20 w-30 mt-2">
+      <%= render "offers/form_client_create_booking", offer: @offer, booking: @booking %>
     </div>
   </div>
-
 </div>
 
 <div class="mt-5 mb-5">

@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :offer
-  before_save :total_price
+  before_save :set_total_price
 
   private
 
