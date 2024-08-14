@@ -1,24 +1,23 @@
-<h1 class="mt-5 mb-5">Show offer</h1>
+<div class="d-flex flex-row card mt-4 bg-light";>
 
-  <div class="d-flex justify-content-end">
+  <div class="col-4">
+    <%= image_tag "bernard.png", class: "w-100 rounded" %>
+  </div>
 
-    <div class="p-2 col-6">
-      <%= image_tag "bernard.png", class: "w-50 rounded"%>
-    </div>
+  <div class="col-8 my-3 p-3">
+    <h4><%= @offer.title %></h4>
+    <ul>
+      <li>Address: <%= @offer.location %> 🏝️</li>
+      <li>Price: <%= @offer.price %> 🌿 /night <br></li>
+    </ul>
+    <p> Please note that by booking this shell, you acknowledge that it may not be perfectly clean and that some sand may remain in the bed. <p>
 
-    <div class="p-2 mt-3 col-6 bg-light border">
-      <p> <strong> <%= @offer.title %> 🐚</strong> </p>
-      <p> <strong> <%= @offer.title %> 🐚</strong> </p>
-      <p> Address: <%= @offer.location %> 🏝️ </p>
-      <p> Price: <%= @offer.price %> 🌿 night </p>
+    <div class="bg-sand px-20 w-30 mt-2">
       <%= render "offers/form_client_create_booking", offer: @offer, booking: @booking %>
     </div>
   </div>
+</div>
 
-  <div class="btn btn-primary">
-    <%= link_to "Back home", offers_path(@offer)%>
-  </div>
-
-  <div class="mt-5 mb-5">
-    <h2>Latest reviews</h2>
-  </div>
+<div class="mt-5 mb-5">
+  <h2>Latest reviews</h2>
+</div>

@@ -1,4 +1,4 @@
-<h2 class="text-center">My Bernard-Bookings</h2>
+<h2 class="my-4">Travel requests</h2>
 
 <div class="cards-grid">
   <% @my_bookings.each do |my_booking| %>
@@ -7,6 +7,7 @@
       <div class="card-dashboard-infos">
         <h2><%= my_booking.offer.title %></h2>
         <p><strong><%= my_booking.total_price %></strong> 🌿</p>
+        <p>From <%= my_booking.start_date %> to <%= my_booking.end_date %></p>
       </div>
     </div>
   <% end %>
