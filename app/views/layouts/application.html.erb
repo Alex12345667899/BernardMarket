@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BernardMarket</title>
+    <title>Bernard 🐚 Market</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,11 +10,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <header class="d-flex align-items-center flex-column">
-      <h1>Bernard Market</h1>
+ <body>
+    <%= render "shared/flashes" %>
+    <header class="d-flex align-items-center flex-column bg-sand">
 
-      <ul class="list-inline tabs-underlined">
+      <h1 class="my-3 title-font">Bernard 🐚 Market</h1>
+
+      <ul class="list-inline tabs-underlined mb-3">
         <li><%= link_to "Home 🐚 Page", offers_path, class:"tab-underlined" %></li>
         <li><%= link_to "My 🐚-Offers", dashboards_offers_path, class:"tab-underlined" %></li>
         <li><%= link_to "My 🐚-Bookings", dashboards_bookings_path, class:"tab-underlined" %></li>
