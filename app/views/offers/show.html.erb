@@ -2,18 +2,18 @@
 
   <div class="d-flex justify-content-end">
 
-    <div class="p-2 col-3">
+    <div class="p-2 col-6">
       <%= image_tag "bernard.png", class: "w-50 rounded"%>
     </div>
 
-    <div class="p-2 mt-3 col-3 bg-light border">
+    <div class="p-2 mt-3 col-6 bg-light border">
       <p> <strong> <%= @offer.title %> 🐚</strong> </p>
       <p> Address: <%= @offer.location %> 🏝️ </p>
       <p> Price: <%= @offer.price %> 🌿 night </p>
     </div>
   </div>
 
-  <div class="btn btn-danger">
+  <div class="btn btn-primary">
     <%= link_to "Back home", offers_path(@offer)%>
   </div>
 
