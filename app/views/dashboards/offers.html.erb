@@ -1,11 +1,17 @@
-<div class="cards-grid">
-  <% @my_offers.each do |my_offer| %>
-    <div class="card-dashboard">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-dashboard-infos">
-        <h2><%= my_offer.title %></h2>
-        <p><strong><%= my_offer.price %></strong> 🌿</p>
-      </div>
+<h2 class="text-center">My Bernard-Offers</h2>
+
+<div class="row">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+      <% @my_offers.each do |my_offer| %>
+        <div class="card-dashboard">
+          <div class="picture">
+            <img class="img-fluid" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+          </div>
+          <div class="card-dashboard-infos">
+            <h3><%= my_offer.title %></h3>
+            <h4 class="price"><%= my_offer.price %> 🌿</h4>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-</div>
+  </div>

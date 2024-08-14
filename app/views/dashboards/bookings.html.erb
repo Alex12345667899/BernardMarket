@@ -1,12 +1,24 @@
 <h2 class="text-center">My Bernard-Bookings</h2>
 
-<div class="cards-grid">
+<div class="row">
   <% @my_bookings.each do |my_booking| %>
-    <div class="card-dashboard">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-dashboard-infos">
-        <h2><%= my_booking.title %></h2>
-        <p><strong><%= my_booking.price %></strong> 🌿</p>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-dashboard">
+        <div class="picture">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+        </div>
+        <div class="card-dashboard-infos">
+          <h3><%= my_booking.offer.title %></h3>
+          <h4 class="price"><%= my_booking.total_price %> 🌿</h4>
+          <% if my_booking.accepted %>
+            <button class="btn btn-success">✔️ Accepted</button>
+          <% elsif my_booking.accepted = false %>
+            <button class="btn btn-danger">✖️ Declined</button>
+          <% else my_booking.accepted = nil %>
+            <%= link_to "Accept", booking_path(my_booking, accepted: true), data: { turbo_method: :patch }, class:"btn btn-success" %>
+            <%= link_to "Decline", booking_path(my_booking, accepted: false), data: { turbo_method: :patch }, class:"btn btn-danger" %>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>
