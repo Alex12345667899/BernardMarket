@@ -1,0 +1,27 @@
+<% if flash[:success] %>
+  <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+    <span><strong>Yay!</strong> 🎉 you successfully signed in to our service.</span>
+    <a data-bs-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div>
+<% end %>
+
+<% if flash[:notice] %>
+  <div class="flash flash-warning alert alert-dismissible fade show" role="alert">
+    <%= flash[:notice] %>
+    <a data-bs-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div>
+
+<% end %>
+
+<% if flash[:alert] %>
+  <div class="flash flash-danger alert alert-dismissible fade show" role="alert">
+    <%= flash[:alert] %>
+    <a data-bs-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div>
+<% end %>

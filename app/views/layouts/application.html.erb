@@ -11,6 +11,7 @@
   </head>
 
  <body>
+    <%= render "shared/flashes" %>
     <header class="d-flex align-items-center flex-column bg-sand">
 
       <h1 class="my-3 title-font">Bernard 🐚 Market</h1>
@@ -20,7 +21,6 @@
         <li><%= link_to "My 🐚-Offers", dashboards_offers_path, class:"tab-underlined" %></li>
         <li><%= link_to "My 🐚-Bookings", dashboards_bookings_path, class:"tab-underlined" %></li>
       </ul>
-
     </header>
 
     <main class="container">

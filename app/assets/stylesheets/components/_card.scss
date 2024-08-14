@@ -1,50 +1,107 @@
-.cards-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+.card-dashboard {
+  padding: 30px 0 40px;
+  margin-bottom: 30px;
+  background-color: $sand;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+
+  .picture {
+    display: inline-block;
+    height: 130px;
+    width: 130px;
+    margin-bottom: 50px;
+    z-index: 1;
+    position: relative;
+  }
+
+  .price {
+    display: block;
+    font-size: 15px;
+    color: #4e5052;
+    text-transform: capitalize;
+  }
 }
 
-.card-dashboard {
+.card-dashboard .picture::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background-color: $pink;
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 0.9;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+
+.card-dashboard:hover .picture::before {
+  height: 100%;
+}
+
+.card-dashboard .picture::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: $pink;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.card-dashboard .picture img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+}
+
+.card-dashboard:hover .picture img {
+  box-shadow: 0 0 0 14px #f7f5ec;
+  transform: scale(0.7);
+}
+
+.card-index {
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.2);
+  margin: 25px 0;
+  min-height: 515px;
   overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
+  width: 100%;
 
   img {
-    height: 100%;
-    width: 120px;
-    object-fit: cover;
-  }
-
-  h2 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  p {
-    font-size: 12px;
-    line-height: 1.4;
-    opacity: .7;
-    margin-bottom: 0;
-    margin-top: 8px;
+    height: auto;
+    object-position: center center;
+    width: 100%;
   }
 }
 
-.card-dashboard-infos {
-  padding: 16px;
+.index-img {
+  border-bottom: 4px solid #F8864F;
+  height: 200px;
+  overflow: hidden;
 }
 
-// .card-avatar {
+.card-index .card-index-infos {
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+  min-height: 315px;
+}
 
-// }
-
-// .card-offer-dashboard {
-
-// }
-
-// .card-booking-dashboard {
-
-// }
+.card-index-infos h2 {
+  font-size: 1.75rem;
+  margin-top: 25px;
+}
+.card-index-infos p.text {
+  font-size: .95rem;
+  margin: 20px auto;
+  text-align: center;
+  width: 85%;
+}
