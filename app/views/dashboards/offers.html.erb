@@ -1,4 +1,4 @@
-<h2 class="main-title my-4">My Bernard-Offers</h2>
+<h2 class="main-title my-4">My Bernard offers</h2>
 
 <%= link_to "Create an offer", new_offer_path, class:"btn-general text-decoration-none" %>
 
@@ -7,11 +7,11 @@
     <div class="col-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-dashboard">
         <div class="picture">
-          <img class="img-fluid" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+          <%= image_tag "#{my_offer.image}", class: 'object-fit-cover img-fluid' %>
         </div>
         <div class="card-dashboard-infos">
-          <h3><%= my_offer.title %></h3>
-          <h4 class="price"><%= my_offer.price %> 🌿</h4>
+          <h3><%= my_offer.title.truncate(21) %></h3>
+          <p class="price"><%= my_offer.price %> 🌿 per night</p>
         </div>
       </div>
     </div>

@@ -2,11 +2,11 @@
   <% @offers.each do |offer| %>
     <%= link_to offer, class: 'col-6 col-md-4 mb-4 text-decoration-none' do %>
       <div class="card h-100 mx-2 rounded card-index">
-        <%= image_tag "bernard.png", class: 'card-img-top' %>
+        <%= image_tag "#{offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
         <div class="card-body">
-          <h5 class="card-title"><%= offer.title %></h5>
-          <p class="card-text grey"><%= offer.location %></p>
-          <p class="card-text"><%= offer.price %> 🌿 / per night</p>
+          <h5 class="card-title mb-0"><%= offer.title %></h5>
+          <p class="card-text grey mt-0"><%= offer.location %></p>
+          <p class="card-text text-end"><%= offer.price %> 🌿 / per night</p>
         </div>
       </div>
     <% end %>
@@ -17,7 +17,7 @@
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      for each banae
+      <%# for each banae %>
       <img src="liend'image" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">

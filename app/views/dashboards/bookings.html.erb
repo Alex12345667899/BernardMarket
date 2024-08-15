@@ -14,10 +14,10 @@
         <div class="col-12 col-sm-6 col-md-4 col-lg-4">
           <div class="card-dashboard">
             <div class="picture">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+              <%= image_tag "#{my_offer.image}", class: 'object-fit-cover img-fluid' %>
             </div>
             <div class="card-dashboard-infos">
-              <h2 class="text-truncate p-2"><%= my_booking.offer.title %></h2>
+              <h2 class="text-truncate p-2"><%= my_booking.offer.title.truncate(21) %></h2>
               <p><strong><%= my_booking.total_price %></strong> 🌿</p>
               <p>From <%= my_booking.start_date %> to <%= my_booking.end_date %></p>
               <% if my_booking.accepted %>
@@ -52,7 +52,7 @@
               <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
             </div>
             <div class="card-dashboard-infos">
-              <h2 class="text-truncate p-2"><%= my_booking.offer.title %></h2>
+              <h2 class="text-truncate p-2"><%= my_booking.offer.title.truncate(21) %></h2>
               <p><strong><%= my_booking.total_price %></strong> 🌿</p>
               <p>From <%= my_booking.start_date %> to <%= my_booking.end_date %></p>
               <% if my_booking.accepted %>
@@ -68,6 +68,6 @@
       <% end %>
     <% end %>
   <% else %>
-    <p>No bookings</p>
+    <p>No booking</p>
   <% end %>
 </div>
