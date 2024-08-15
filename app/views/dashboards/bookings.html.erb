@@ -1,7 +1,7 @@
 
 <div class="row">
   <%# en tant que proprio %>
-  <h2 class="my-4">Clients booking requests :</h2>
+  <h2 class="main-title my-4">Clients booking requests</h2>
   <% count = 0 %>
   <% @my_bookings.each do |my_booking| %>
     <% if my_booking.offer.user_id == current_user.id %>
@@ -43,7 +43,7 @@
     <% end %>
   <% end %>
   <% if count > 0 %>
-    <h2 class="my-4">My travel requests</h2>
+    <h2 class="main-title my-4">My travel requests</h2>
     <% @my_bookings.each do |my_booking| %>
       <% if my_booking.offer.user_id != current_user.id %>
         <div class="col-12 col-sm-6 col-md-4 col-lg-4">
