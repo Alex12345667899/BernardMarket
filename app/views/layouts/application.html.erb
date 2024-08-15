@@ -27,9 +27,33 @@
       <%= yield %>
     </main>
 
-    <footer>
-
+    <footer class="footer-bs">
+      <div class="row">
+        <div class="col-md-3 footer-brand animated fadeInLeft">
+          <h2 class="main-title">Bernard 🐚 Market</h2>
+          <p>Made by the Bernards, for the Bernards.</p>
+          <p>© 2024 / All rights reserved</p>
+        </div>
+        <div class="col-md-4 footer-nav animated fadeInUp">
+          <h4>Menu —</h4>
+          <div class="col-md-6">
+            <ul class="pages">
+              <li><%= link_to "All Offers", offers_path %></li>
+              <li><%= link_to "My Offers", dashboards_offers_path %></li>
+              <li><%= link_to "My Bookings", dashboards_bookings_path %></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 footer-social animated fadeInDown">
+          <h4>Follow Us On LinkedIn —</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/vincent-gannier/" target="_blank">Bernard-LeOuf</a></li>
+            <li><a href="https://www.linkedin.com/in/alexandre-guilmet-5b5bb2226/" target="_blank">Bernard-Lancelot</a></li>
+            <li><a href="https://www.linkedin.com/in/lucasmaillet/" target="_blank">Bernard-LeGendreIdéal</a></li>
+            <li><a href="www.linkedin.com/in/enzobertevas/" target="_blank">Bernard-🇧🇷</a></li>
+          </ul>
+        </div>
+      </div>
     </footer>
   </body>
-
 </html>
