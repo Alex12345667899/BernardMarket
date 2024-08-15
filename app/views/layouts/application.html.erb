@@ -14,12 +14,14 @@
     <%= render "shared/flashes" %>
     <header class="d-flex align-items-center flex-column bg-sand">
 
-      <h1 class="main-title my-3 title-font" id="main-title">Bernard 🐚 Market</h1>
+      <h1 class="main-title my-3 title-font text-black text-decoration-none" id="main-title">
+        <%= link_to "Bernard 🐚 Market", offers_path %>
+      </h1>
 
       <ul class="list-inline tabs-underlined mb-3">
-        <li><%= link_to "Home 🐚 Page", offers_path, class:"tab-underlined" %></li>
-        <li><%= link_to "My 🐚-Offers", dashboards_offers_path, class:"tab-underlined" %></li>
-        <li><%= link_to "My 🐚-Bookings", dashboards_bookings_path, class:"tab-underlined" %></li>
+        <li><%= link_to "Home", offers_path, class:"tab-underlined" %></li>
+        <li><%= link_to "My Shells", dashboards_offers_path, class:"tab-underlined" %></li>
+        <li><%= link_to "My Bookings", dashboards_bookings_path, class:"tab-underlined" %></li>
       </ul>
     </header>
 
