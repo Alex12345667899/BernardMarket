@@ -14,6 +14,7 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
+    @offer.user = current_user
     if @offer.save
       redirect_to @offer, notice: 'Offer was successfully created.'
     else

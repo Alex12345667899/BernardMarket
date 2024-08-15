@@ -1,11 +1,11 @@
 <%= simple_form_for [offer, booking] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <div class="form-inputs d-flex flex-row">
+  <div class="form-inputs d-flex flex-row border">
     <%= f.input :start_date, as: :string, class:"start_date", input_html: { data: { controller: "datepicker" } } %>
     <%= f.input :end_date, as: :string, class:"end_date",input_html: { data: { controller: "datepicker" } } %>
-    <div class="form-action btn-card-index">
-      <%= f.button :submit %>
+    <div class="form-action btn-card-offer">
+      <%= f.button :submit, value: "Book this shell" %>
     </div>
   </div>
 <% end %>

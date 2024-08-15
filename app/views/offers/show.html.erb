@@ -6,12 +6,12 @@
     <div class="card-offer-infos">
       <h4><%= @offer.location %> 🏝️</h4>
       <h2><%= @offer.title %></h2>
-      <%= render "offers/form_client_create_booking", offer: @offer, booking: @booking %>
+      <%= render "bookings/form", offer: @offer, booking: @booking %>
     <div class="card-offer-price">
       <h6>Bernard <%= @offer.user.last_name %></h6>
       <h4><%= @offer.price %> 🌿 / night</h4>
     </div>
-      <button class="btn-card-offer">Book this shell</#button>
+
     </div>
   </div>
 </div>

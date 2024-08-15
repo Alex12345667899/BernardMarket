@@ -12,14 +12,14 @@ User.destroy_all
 puts "All Bernards were destroyed"
 
 user_attributes = [
-  { email: "client", last_name: "client", password: "azerty" }
+  { email: "client@bernard.com", last_name: "client", password: "azerty" }
   { email: "bernard.tapie@coquille.com", last_name: "Tapie", password: "azerty" },
   { email: "bernard.ebianca@disney.com", last_name: "Ebianca", password: "azerty" },
   { email: "bernard.outo@konoha.com", last_name: "Outo", password: "azerty" },
   { email: "bernard.cotrafiquant@medellin.com", last_name: "Cotrafiquant", password: "azerty" },
   { email: "nanar.l'hermite@coquille.com", last_name: "l'hermite", password: "azerty" },
   { email: "bernard.arnault@lvmh.com", last_name: "Arnault", password: "azerty" },
-  { email: "owner", last_name: "owner", password: "azerty" }
+  { email: "owner@bernard.com", last_name: "owner", password: "azerty" }
 ]
 
 user_attributes.each do |user_attribute|
