@@ -5,27 +5,3 @@
 .main-title {
   font-family: "Keania One", sans-serif;
 }
-
-p {
-
-}
-
-.btn-general {
-	background-color: $sand;
-  color: black;
-	border: 0;
-	border-radius: 50px;
-	font-size: 16px;
-	padding: 12px 25px;
-	position: absolute;
-	bottom: 30px;
-	right: 30px;
-	letter-spacing: 1px;
-  transition: 0.3s ease;
-}
-
-.btn-general:hover {
-  background-color: $pink;
-  color: #fff;
-	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-}

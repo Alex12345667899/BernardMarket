@@ -4,6 +4,6 @@
   <div class="form-inputs d-flex flex-row">
     <%= f.input :start_date, as: :string, class:"start_date", input_html: { data: { controller: "datepicker" } } %>
     <%= f.input :end_date, as: :string, class:"end_date", input_html: { data: { controller: "datepicker" } } %>
-    <%= f.button :submit, value: "Book this shell", class:"btn-general mb-3" %>
+    <%= f.submit "Book this shell", class:"btn-general mb-3" %>
   </div>
 <% end %>
