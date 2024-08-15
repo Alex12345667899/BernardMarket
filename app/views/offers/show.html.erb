@@ -1,54 +1,47 @@
-<div class="d-flex flex-row card mt-4 bg-light";>
-
-  <div class="col-4">
-    <%= image_tag "bernard.png", class: "w-100 rounded" %>
-  </div>
-
-  <div class="col-8 my-3 p-3">
-    <h4><%= @offer.title %></h4>
-    <ul>
-      <li>Address: <%= @offer.location %> 🏝️</li>
-      <li>Price: <%= @offer.price %> 🌿 /night <br></li>
-    </ul>
-    <p> Please note that by booking this shell, you acknowledge that it may not be perfectly clean and that some sand may remain in the bed. <p>
-
-    <div class="bg-sand px-20 w-30 mt-2">
+<div class="d-flex justify-content-center">
+  <div class="card-offer">
+    <div class="card-offer-picture">
+      <img src="https://static.nationalgeographic.fr/files/styles/image_3200/public/01-hermit-crabs-minden_00512417.jpg?w=1600&h=900" alt="">
+    </div>
+    <div class="card-offer-infos">
+      <h4><%= @offer.location %> 🏝️</h4>
+      <h2><%= @offer.title %></h2>
       <%= render "offers/form_client_create_booking", offer: @offer, booking: @booking %>
+    <div class="card-offer-price">
+      <h6>Bernard <%= @offer.user.last_name %></h6>
+      <h4><%= @offer.price %> 🌿 / night</h4>
+    </div>
+      <button class="btn-card-offer">Book this shell</#button>
     </div>
   </div>
 </div>
 
+
 <div class="mt-5 mb-5">
   <h2>Latest reviews:</h2>
 
-
-
-
   <div class="card my-3">
-  <div class="card-header">
-    Magnifique coquille
+    <div class="card-header">
+      Magnifique coquille
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>Un accueil très chaleureux. Une magnifique propriété de caractère , calme et dans un cadre de verdure. Notre chambre était spacieuse et d’une propreté irréprochable. Le petit déjeuner copieux. Notre séjour était de 2 nuits. Nous y retournons avec grand plaisir. Merci à vous d’avoir fait de notre séjour un moment des plus agréables. À bientôt.</p>
+        <footer class="blockquote-footer">Bernard Ebianca</footer>
+      </blockquote>
+    </div>
   </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p>Un accueil très chaleureux. Une magnifique propriété de caractère , calme et dans un cadre de verdure.
-Notre chambre était spacieuse et d’une propreté irréprochable. Le petit déjeuner copieux. Notre séjour était de 2 nuits. Nous y retournons avec grand plaisir.
-Merci à vous d’avoir fait de notre séjour un moment des plus agréables.
-À bientôt.</p>
-      <footer class="blockquote-footer">Bernard Ebianca
-    </blockquote>
-  </div>
-</div>
 
   <div class="card mb-3">
-  <div class="card-header">
-    Super weekend entre coquilles
+    <div class="card-header">
+      Super weekend entre coquilles
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>Literie de qualité, nombre de bulles incroyables dans le jacuzzi</p>
+        <footer class="blockquote-footer">Bernard</footer>
+      </blockquote>
+    </div>
   </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p>Literie de qualité, nombre de bulles incroyables dans le jacuzzi</p>
-      <footer class="blockquote-footer">Bernard Kouchner
-    </blockquote>
-  </div>
-</div>
 
 </div>
