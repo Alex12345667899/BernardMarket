@@ -4,35 +4,11 @@
       <div class="card h-100 mx-2 rounded card-index">
         <%= image_tag "#{offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
         <div class="card-body">
-          <h5 class="card-title mb-0"><%= offer.title %></h5>
+          <h5 class="card-title mb-0"><%= offer.title.truncate(25) %></h5>
           <p class="card-text grey mt-0"><%= offer.location %></p>
-          <p class="card-text text-end"><%= offer.price %> 🌿 / per night</p>
+          <p class="card-text text-end"><%= offer.price %> 🌿 per night</p>
         </div>
       </div>
     <% end %>
   <% end %>
-</div>
-
-
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%# for each banae %>
-      <img src="liend'image" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
