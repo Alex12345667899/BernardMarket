@@ -14,7 +14,11 @@
         <div class="col-12 col-sm-6 col-md-4 col-lg-4">
           <div class="card-dashboard">
             <div class="picture">
-              <%= image_tag "#{my_offer.image}", class: 'object-fit-cover img-fluid' %>
+              <% if my_booking.offer.image.blank? %>
+                <%= image_tag my_booking.offer.photo, class: "img-fluid" %>
+              <% else my_booking.offer.photo.blank? %>
+                <%= image_tag "#{my_booking.offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
+              <% end %>
             </div>
             <div class="card-dashboard-infos">
               <h2 class="text-truncate p-2"><%= my_booking.offer.title.truncate(21) %></h2>
@@ -42,14 +46,18 @@
       <% count += 1 %>
     <% end %>
   <% end %>
+  <h2 class="main-title my-4">My travel requests</h2>
   <% if count > 0 %>
-    <h2 class="main-title my-4">My travel requests</h2>
     <% @my_bookings.each do |my_booking| %>
       <% if my_booking.offer.user_id != current_user.id %>
         <div class="col-12 col-sm-6 col-md-4 col-lg-4">
           <div class="card-dashboard">
             <div class="picture">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+              <% if my_booking.offer.image.blank? %>
+                <%= image_tag my_booking.offer.photo, class: "img-fluid" %>
+              <% else my_booking.offer.photo.blank? %>
+                <%= image_tag "#{my_booking.offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
+              <% end %>
             </div>
             <div class="card-dashboard-infos">
               <h2 class="text-truncate p-2"><%= my_booking.offer.title.truncate(21) %></h2>
