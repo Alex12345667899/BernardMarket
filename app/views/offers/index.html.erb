@@ -2,7 +2,11 @@
   <% @offers.each do |offer| %>
     <%= link_to offer, class: 'col-6 col-md-4 mb-4 text-decoration-none' do %>
       <div class="card h-100 mx-2 rounded card-index">
-        <%= image_tag "#{offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
+        <% if offer.image.blank? %>
+          <%= image_tag offer.photo, class: "img-fluid" %>
+        <% else offer.photo.blank? %>
+          <%= image_tag "#{offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title mb-0"><%= offer.title.truncate(25) %></h5>
           <p class="card-text grey mt-0"><%= offer.location %></p>

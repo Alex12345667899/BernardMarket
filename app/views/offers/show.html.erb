@@ -1,7 +1,11 @@
 <div class="d-flex justify-content-center">
   <div class="card-offer">
     <div class="card-offer-picture">
-      <img src="https://static.nationalgeographic.fr/files/styles/image_3200/public/01-hermit-crabs-minden_00512417.jpg?w=1600&h=900" alt="">
+      <% if @offer.image.blank? %>
+        <%= image_tag @offer.photo, class: "img-fluid" %>
+      <% else @offer.photo.blank? %>
+        <%= image_tag "#{@offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
+      <% end %>
     </div>
     <div class="card-offer-infos">
       <h4><%= @offer.location %> 🏝️</h4>
