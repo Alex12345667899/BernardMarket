@@ -4,8 +4,8 @@
       <img src="https://static.nationalgeographic.fr/files/styles/image_3200/public/01-hermit-crabs-minden_00512417.jpg?w=1600&h=900" alt="">
     </div>
     <div class="card-offer-infos">
-      <h4><%= @offer.location %> 🏝️</h4>
       <h2><%= @offer.title %></h2>
+      <h4><%= @offer.location %> 🏝️</h4>
       <%= render "bookings/form", offer: @offer, booking: @booking %>
     <div class="card-offer-price">
       <h6>Bernard <%= @offer.user.last_name %></h6>

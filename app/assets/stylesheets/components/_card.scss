@@ -69,6 +69,7 @@
 
 .grey {
   color: grey;
+  font-size: 1.3rem;
 }
 
 .card-index:hover {
@@ -86,16 +87,18 @@
   object-fit: cover;
 }
 
-.card-index-infos h2 {
-  font-size: 6rem;
+.card-index-infos {
   margin-top: 25px;
-}
+  margin-left: 15px;
 
-.card-index-infos p.text {
-  font-size: 4rem;
-  margin: 20px auto;
-  text-align: center;
-  width: 85%;
+  h5 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-right: 15px;
+  }
 }
 
 .card-offer {
@@ -106,7 +109,7 @@
 	max-width: 100%;
 	margin: 20px;
 	overflow: hidden;
-	width: 950px;
+	width: 1500px;
 }
 
 .card-offer-picture {
@@ -126,6 +129,14 @@
 	padding: 30px;
 	position: relative;
 	width: 100%;
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h4 {
+    margin-bottom: 30px;
+  }
 }
 
 .card-offer-price {
@@ -133,5 +144,13 @@
 	top: 20px;
 	right: 30px;
 	text-align: right;
-	width: 150px;
+	width: 200px;
+
+  h4 {
+    font-size: 1.7rem;
+  }
+
+  h6 {
+    font-size: 1.3rem;
+  }
 }
