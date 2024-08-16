@@ -8,7 +8,7 @@
       <div class="card-dashboard">
         <div class="picture">
           <% if my_offer.image.blank? %>
-            <%= image_tag my_offer.photo, class: "img-fluid" %>
+            <%= image_tag my_offer.photo, class: "card-img-top object-fit-cover img-fluid" %>
           <% else my_offer.photo.blank? %>
             <%= image_tag "#{my_offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
           <% end %>        </div>

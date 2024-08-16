@@ -3,7 +3,7 @@
     <%= link_to offer, class: 'col-6 col-md-4 mb-4 text-decoration-none' do %>
       <div class="card h-100 mx-2 rounded card-index">
         <% if offer.image.blank? %>
-          <%= image_tag offer.photo, class: "img-fluid" %>
+          <%= image_tag offer.photo, class: "card-img-top object-fit-cover img-fluid" %>
         <% else offer.photo.blank? %>
           <%= image_tag "#{offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
         <% end %>
