@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center">
   <div class="card-offer">
     <div class="card-offer-picture">
-      <img src="https://static.nationalgeographic.fr/files/styles/image_3200/public/01-hermit-crabs-minden_00512417.jpg?w=1600&h=900" alt="">
+    <%= image_tag "#{@offer.image}", class: 'd-block w-100' %>
     </div>
     <div class="card-offer-infos">
       <h4><%= @offer.location %> 🏝️</h4>
@@ -22,11 +22,11 @@
 
   <div class="card my-3">
     <div class="card-header">
-      Magnifique coquille
+      Wonderful shell !
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <p>Un accueil très chaleureux. Une magnifique propriété de caractère , calme et dans un cadre de verdure. Notre chambre était spacieuse et d’une propreté irréprochable. Le petit déjeuner copieux. Notre séjour était de 2 nuits. Nous y retournons avec grand plaisir. Merci à vous d’avoir fait de notre séjour un moment des plus agréables. À bientôt.</p>
+        <p>A very warm welcome. A magnificent property with character, calm and surrounded by greenery. Our room was spacious and spotlessly clean. The breakfast was copious. We stayed for 2 nights. We will return with great pleasure. Thank you for making our stay so pleasant. We hope to see you soon.</p>
         <footer class="blockquote-footer">Bernard Ebianca</footer>
       </blockquote>
     </div>
@@ -34,11 +34,11 @@
 
   <div class="card mb-3">
     <div class="card-header">
-      Super weekend entre coquilles
+      Great weekend between shells
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <p>Literie de qualité, nombre de bulles incroyables dans le jacuzzi</p>
+        <p>Quality bedding, incredible number of bubbles in jacuzzi</p>
         <footer class="blockquote-footer">Bernard</footer>
       </blockquote>
     </div>
