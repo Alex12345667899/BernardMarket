@@ -8,8 +8,8 @@
       <% end %>
     </div>
     <div class="card-offer-infos">
-      <h4><%= @offer.location %> 🏝️</h4>
       <h2><%= @offer.title %></h2>
+      <h4><%= @offer.location %> 🏝️</h4>
       <%= render "bookings/form", offer: @offer, booking: @booking %>
     <div class="card-offer-price">
       <h6>Bernard <%= @offer.user.last_name %></h6>
