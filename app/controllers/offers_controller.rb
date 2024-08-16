@@ -1,6 +1,11 @@
 class OffersController < ApplicationController
   def index
     @offers = Offer.all
+    if params[:search] && params[:search][:query].present?
+      @offers = Offer.search_by_title_and_location_and_price(params[:search][:query])
+    else
+      
+    end
   end
 
   def show

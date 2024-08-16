@@ -8,6 +8,9 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+# PG search
+gem 'pg_search'
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
