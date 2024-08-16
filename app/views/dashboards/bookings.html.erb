@@ -2,13 +2,7 @@
 <div class="row">
   <h2 class="main-title my-4">Clients booking requests</h2>
   <%# en tant que proprio %>
-  <% count = 0 %>
-  <% @my_bookings.each do |my_booking| %>
-    <% if my_booking.offer.user_id == current_user.id %>
-      <% count += 1 %>
-    <% end %>
-  <% end %>
-  <% if count > 0 %>
+  <% if @offers_bookings.any? %>
     <% @offers_bookings.each do |my_booking| %>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card-dashboard">
