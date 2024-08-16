@@ -35,10 +35,10 @@ puts "All offers were destroyed"
 offer_attributes = [
   { title: "Huge shell to rent", location: "Rio beach", price: 200, user: User.last, image: "bernard_villa.jpeg" },
   { title: "Crabs love it", location: "Near to the docks", price: 120, user: User.third, image: "bernard_sprite.jpeg" },
-  { title: "Comfy shell", location: "In an airplane, behind seat A21", price: 130, user: User.last, image: "bernard_ombrelle.jpeg" },
-  { title: "Cheap shell for students", location: "Second rock after the coral forest", price: 45, user: User.second, image: "bernard_etudiant.jpg" },
-  { title: "Luxury shell", location: "In the beautiful seaweed fields", price: 500, user: User.second, image: "bernard_or.jpeg" },
-  { title: "Double bedroom shell, ideal for couples", location: "Pyla Dune", price: 150, user: User.last, image: "bernard_lunettes.jpeg" },
+  { title: "Comfy shell", location: "In an airplane", price: 130, user: User.last, image: "bernard_ombrelle.jpeg" },
+  { title: "Cheap shell", location: "Coral forest", price: 45, user: User.second, image: "bernard_etudiant.jpg" },
+  { title: "Luxury shell", location: "Seaweed fields", price: 500, user: User.second, image: "bernard_or.jpeg" },
+  { title: "Double bedroom shell", location: "Pyla Dune", price: 150, user: User.last, image: "bernard_lunettes.jpeg" },
   { title: "Dowtown shell", location: "Arcachon", price: 115, user: User.third, image: "bernard_pauvre.jpeg" }
 ]
 
