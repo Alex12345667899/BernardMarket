@@ -22,8 +22,10 @@
         </h1></>
 
         <div>
-          <p id="avatar-name">B. <%= current_user.last_name %></p>
-          <%= image_tag "https://arn-messager.com/wp-content/uploads/2023/03/bernard-lhermite.jpg", class: "avatar-large" %>
+          <% if current_user %>
+            <p id="avatar-name">B. <%= current_user.last_name %></p>
+            <%= image_tag "https://arn-messager.com/wp-content/uploads/2023/03/bernard-lhermite.jpg", class: "avatar-large" %>
+          <% end %>
         </div>
       </div>
 

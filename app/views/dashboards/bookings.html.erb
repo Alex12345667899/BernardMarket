@@ -1,7 +1,7 @@
 
 <div class="row">
-  <%# en tant que proprio %>
   <h2 class="main-title my-4">Clients booking requests</h2>
+  <%# en tant que proprio %>
   <% count = 0 %>
   <% @my_bookings.each do |my_booking| %>
     <% if my_booking.offer.user_id == current_user.id %>
@@ -9,71 +9,62 @@
     <% end %>
   <% end %>
   <% if count > 0 %>
-    <% @my_bookings.each do |my_booking| %>
-      <% if my_booking.offer.user_id == current_user.id %>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-          <div class="card-dashboard">
-            <div class="picture">
-              <% if my_booking.offer.image.blank? %>
-                <%= image_tag my_booking.offer.photo, class: "card-img-top object-fit-cover img-fluid" %>
-              <% else my_booking.offer.photo.blank? %>
-                <%= image_tag "#{my_booking.offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
-              <% end %>
-            </div>
-            <div class="card-dashboard-infos">
-              <h2 class="text-truncate p-2"><%= my_booking.offer.title.truncate(21) %></h2>
-              <p><strong><%= my_booking.total_price %></strong> 🌿</p>
-              <p>From <%= my_booking.start_date %> to <%= my_booking.end_date %></p>
-              <% if my_booking.accepted %>
-                <button class="btn btn-success" disabled="true">✔️ Accepted</button>
-              <% elsif my_booking.accepted == false %>
-                <button class="btn btn-danger" disabled="true">✖️ Declined</button>
-              <% else my_booking.accepted = nil %>
-                <%= link_to "Accept", booking_path(my_booking, accepted: true), data: { turbo_method: :patch }, class:"btn btn-success" %>
-                <%= link_to "Decline", booking_path(my_booking, accepted: false), data: { turbo_method: :patch }, class:"btn btn-danger" %>
-              <% end %>
-            </div>
+    <% @offers_bookings.each do |my_booking| %>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="card-dashboard">
+          <div class="picture">
+            <% if my_booking.offer.image.blank? %>
+              <%= image_tag my_booking.offer.photo, class: "img-fluid" %>
+            <% else my_booking.offer.photo.blank? %>
+              <%= image_tag "#{my_booking.offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
+            <% end %>
+          </div>
+          <div class="card-dashboard-infos">
+            <h2 class="text-truncate p-2"><%= my_booking.offer.title.truncate(21) %></h2>
+            <p><strong><%= my_booking.total_price %></strong> 🌿</p>
+            <p>From <%= my_booking.start_date %> to <%= my_booking.end_date %></p>
+            <% if my_booking.accepted %>
+              <button class="btn btn-success" disabled="true">✔️ Accepted</button>
+            <% elsif my_booking.accepted == false %>
+              <button class="btn btn-danger" disabled="true">✖️ Declined</button>
+            <% else my_booking.accepted = nil %>
+              <%= link_to "Accept", booking_path(my_booking, accepted: true), data: { turbo_method: :patch }, class:"btn btn-success" %>
+              <%= link_to "Decline", booking_path(my_booking, accepted: false), data: { turbo_method: :patch }, class:"btn btn-danger" %>
+            <% end %>
           </div>
         </div>
-      <% end %>
+      </div>
     <% end %>
   <% else %>
     <p>Waiting for requests ...</p>
   <% end %>
   <%# en tant que client %>
-  <% @my_bookings.each do |my_booking| %>
-    <% if my_booking.offer.user_id != current_user.id %>
-      <% count += 1 %>
-    <% end %>
-  <% end %>
   <h2 class="main-title my-4">My travel requests</h2>
-  <% if count > 0 %>
+  <% if @my_bookings.any? %>
     <% @my_bookings.each do |my_booking| %>
-      <% if my_booking.offer.user_id != current_user.id %>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-          <div class="card-dashboard">
-            <div class="picture">
-              <% if my_booking.offer.image.blank? %>
-                <%= image_tag my_booking.offer.photo, class: "card-img-top object-fit-cover img-fluid" %>
-              <% else my_booking.offer.photo.blank? %>
-                <%= image_tag "#{my_booking.offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
-              <% end %>
-            </div>
-            <div class="card-dashboard-infos">
-              <h2 class="text-truncate p-2"><%= my_booking.offer.title.truncate(21) %></h2>
-              <p><strong><%= my_booking.total_price %></strong> 🌿</p>
-              <p><%= my_booking.start_date %> to <%= my_booking.end_date %></p>
-              <% if my_booking.accepted %>
-                <p>Accepted</p>
-              <% elsif my_booking.accepted == false %>
-                <p>Declined</p>
-              <% else my_booking.accepted = nil %>
-                <p>Pending</p>
-              <% end %>
-            </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="card-dashboard">
+          <div class="picture">
+            <% if my_booking.offer.image.blank? %>
+              <%= image_tag my_booking.offer.photo, class: "img-fluid" %>
+            <% else my_booking.offer.photo.blank? %>
+              <%= image_tag "#{my_booking.offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
+            <% end %>
+          </div>
+          <div class="card-dashboard-infos">
+            <h2 class="text-truncate p-2"><%= my_booking.offer.title.truncate(21) %></h2>
+            <p><strong><%= my_booking.total_price %></strong> 🌿</p>
+            <p class="fst-italic" ><%= my_booking.start_date %> to <%= my_booking.end_date %></p>
+            <% if my_booking.accepted %>
+              <p class="text-success">Accepted</p>
+            <% elsif my_booking.accepted == false %>
+              <p class="text-danger"> Declined</p>
+            <% else my_booking.accepted = nil %>
+              <p class="text-secondary">Pending...</p>
+            <% end %>
           </div>
         </div>
-      <% end %>
+      </div>
     <% end %>
   <% else %>
     <p>Waiting for bookings ...</p>

@@ -7,5 +7,6 @@ class DashboardsController < ApplicationController
 
   def bookings
     @my_bookings = current_user.bookings
+    @offers_bookings = current_user.offers_bookings
   end
 end
