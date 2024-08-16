@@ -1,11 +1,15 @@
 <div class="d-flex justify-content-center">
   <div class="card-offer">
     <div class="card-offer-picture">
-    <%= image_tag "#{@offer.image}", class: 'd-block w-100' %>
+      <% if @offer.image.blank? %>
+        <%= image_tag @offer.photo, class: "img-fluid" %>
+      <% else @offer.photo.blank? %>
+        <%= image_tag "#{@offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
+      <% end %>
     </div>
     <div class="card-offer-infos">
-      <h4><%= @offer.location %> 🏝️</h4>
       <h2><%= @offer.title %></h2>
+      <h4><%= @offer.location %> 🏝️</h4>
       <%= render "bookings/form", offer: @offer, booking: @booking %>
     <div class="card-offer-price">
       <h6>Bernard <%= @offer.user.last_name %></h6>

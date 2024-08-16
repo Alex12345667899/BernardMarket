@@ -19,7 +19,7 @@ user_attributes = [
   { email: "bernard.cotrafiquant@medellin.com", last_name: "Cotrafiquant", password: "azerty" },
   { email: "nanar.l'hermite@coquille.com", last_name: "l'hermite", password: "azerty" },
   { email: "bernard.arnault@lvmh.com", last_name: "Arnault", password: "azerty" },
-  { email: "owner@bernard.com", last_name: "owner", password: "azerty" }
+  { email: "owner@bernard.com", last_name: "owner", password: "azerty" },
 ]
 
 user_attributes.each do |user_attribute|
