@@ -18,3 +18,14 @@
   opacity: 1;
   border-bottom: 3px solid #555555;
 }
+
+.avatar-large {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  position: absolute;
+  align-items: right;
+  right: 70px;
+  top: 45px;
+  object-fit: cover;
+}

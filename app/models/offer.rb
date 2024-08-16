@@ -5,4 +5,11 @@ class Offer < ApplicationRecord
   validates :title, presence: true
   validates :location, presence: true
   validates :price, presence: true
+
+  include PgSearch::Model
+pg_search_scope :search_by_title_and_location_and_price,
+  against: [ :title, :location, :price ],
+  using: {
+    tsearch: { prefix: true }
+  }
 end
