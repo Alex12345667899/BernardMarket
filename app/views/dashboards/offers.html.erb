@@ -7,8 +7,11 @@
     <div class="col-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-dashboard">
         <div class="picture">
-          <%= image_tag "#{my_offer.image}", class: 'object-fit-cover img-fluid' %>
-        </div>
+          <% if my_offer.image.blank? %>
+            <%= image_tag my_offer.photo, class: "img-fluid" %>
+          <% else my_offer.photo.blank? %>
+            <%= image_tag "#{my_offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
+          <% end %>        </div>
         <div class="card-dashboard-infos">
           <h3><%= my_offer.title.truncate(21) %></h3>
           <p class="price"><%= my_offer.price %> 🌿 per night</p>
