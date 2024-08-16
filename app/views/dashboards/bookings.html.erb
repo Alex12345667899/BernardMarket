@@ -16,7 +16,7 @@
           <div class="card-dashboard-infos">
             <h2 class="text-truncate p-2"><%= my_booking.offer.title.truncate(21) %></h2>
             <p><strong><%= my_booking.total_price %></strong> 🌿</p>
-            <p>From <%= my_booking.start_date %> to <%= my_booking.end_date %></p>
+            <p><%= my_booking.start_date %> to <%= my_booking.end_date %></p>
             <% if my_booking.accepted %>
               <button class="btn btn-success" disabled="true">✔️ Accepted</button>
             <% elsif my_booking.accepted == false %>
