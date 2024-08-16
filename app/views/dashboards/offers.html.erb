@@ -1,6 +1,9 @@
-<h2 class="main-title my-4">My Bernard offers</h2>
-
-<%= link_to "Create an offer", new_offer_path, class:"btn-general text-decoration-none" %>
+<div class="row">
+  <div class="d-flex justify-content-between">
+    <h2 class="main-title my-4">My Bernard offers</h2>
+    <%= link_to "Create an offer", new_offer_path, class:"btn-card-offer text-decoration-none" %>
+  </div>
+</div>
 
 <div class="row">
   <% @my_offers.each do |my_offer| %>
@@ -8,7 +11,7 @@
       <div class="card-dashboard">
         <div class="picture">
           <% if my_offer.image.blank? %>
-            <%= image_tag my_offer.photo, class: "img-fluid" %>
+            <%= image_tag my_offer.photo, class: "card-img-top object-fit-cover img-fluid" %>
           <% else my_offer.photo.blank? %>
             <%= image_tag "#{my_offer.image}", class: 'card-img-top object-fit-cover img-fluid' %>
           <% end %>        </div>
