@@ -1,6 +1,9 @@
-<h2 class="main-title my-4">My Bernard offers</h2>
-
-<%= link_to "Create an offer", new_offer_path, class:"btn-general text-decoration-none" %>
+<div class="row">
+  <div class="d-flex justify-content-between">
+    <h2 class="main-title my-4">My Bernard offers</h2>
+    <%= link_to "Create an offer", new_offer_path, class:"btn-card-offer text-decoration-none" %>
+  </div>
+</div>
 
 <div class="row">
   <% @my_offers.each do |my_offer| %>
