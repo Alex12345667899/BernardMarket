@@ -8,44 +8,43 @@
       <% end %>
     </div>
     <div class="card-offer-infos">
-      <h2><%= @offer.title %></h2>
-      <h4><%= @offer.location %> 🏝️</h4>
-      <%= render "bookings/form", offer: @offer, booking: @booking %>
-    <div class="card-offer-price">
-      <h6>Bernard <%= @offer.user.last_name %></h6>
-      <h4><%= @offer.price %> 🌿 per night</h4>
+      <h2 class="mb-0" ><%= @offer.title %></h2>
+      <h4 class="mt-0" ><%= @offer.location %> 🏝️</h4>
+      <%= render "bookings/form", offer: @offer, booking: @booking, class: "mb-0" %>
+      <div class="card-offer-price">
+        <h6>Bernard <%= @offer.user.last_name %></h6>
+        <h6><%= @offer.price %> 🌿 / night</h6>
+      </div>
     </div>
 
-    </div>
   </div>
 </div>
 
-
-<div class="mt-5 mb-5">
-  <h2>Latest reviews:</h2>
-
-  <div class="card my-3">
-    <div class="card-header">
-      Wonderful shell !
+<div class="card my-3">
+  <div class="card-body">
+    <h4>Latest reviews:</h4>
+    <div class="card my-3">
+      <div class="card-header">
+        <h5>Wonderful shell !</h5>
+      </div>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p>A very warm welcome. A magnificent property with character, calm and surrounded by greenery. Our room was spacious and spotlessly clean. The breakfast was copious. We stayed for 2 nights. We will return with great pleasure. Thank you for making our stay so pleasant. We hope to see you soon.</p>
+          <footer class="blockquote-footer text-end">Bernard Ebianca</footer>
+        </blockquote>
+      </div>
     </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p>A very warm welcome. A magnificent property with character, calm and surrounded by greenery. Our room was spacious and spotlessly clean. The breakfast was copious. We stayed for 2 nights. We will return with great pleasure. Thank you for making our stay so pleasant. We hope to see you soon.</p>
-        <footer class="blockquote-footer">Bernard Ebianca</footer>
-      </blockquote>
+
+    <div class="card mb-3">
+      <div class="card-header">
+        <h5>Great weekend between shells</h5>
+      </div>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p>Quality bedding, incredible number of bubbles in jacuzzi</p>
+          <footer class="blockquote-footer text-end">Bernard</footer>
+        </blockquote>
+      </div>
     </div>
   </div>
-
-  <div class="card mb-3">
-    <div class="card-header">
-      Great weekend between shells
-    </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p>Quality bedding, incredible number of bubbles in jacuzzi</p>
-        <footer class="blockquote-footer">Bernard</footer>
-      </blockquote>
-    </div>
-  </div>
-
 </div>
