@@ -36,7 +36,7 @@
       </div>
     <% end %>
   <% else %>
-    <p>No request</p>
+    <p>Waiting for requests ...</p>
   <% end %>
   <%# en tant que client %>
   <h2 class="main-title my-4">My travel requests</h2>
@@ -54,7 +54,7 @@
           <div class="card-dashboard-infos">
             <h2 class="text-truncate p-2"><%= my_booking.offer.title.truncate(21) %></h2>
             <p><strong><%= my_booking.total_price %></strong> 🌿</p>
-            <p class="fst-italic" >From <%= my_booking.start_date %> to <%= my_booking.end_date %></p>
+            <p class="fst-italic" ><%= my_booking.start_date %> to <%= my_booking.end_date %></p>
             <% if my_booking.accepted %>
               <p class="text-success">Accepted</p>
             <% elsif my_booking.accepted == false %>
@@ -67,6 +67,6 @@
       </div>
     <% end %>
   <% else %>
-    <p>No booking</p>
+    <p>Waiting for bookings ...</p>
   <% end %>
 </div>
